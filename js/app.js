@@ -1,6 +1,4 @@
 let posts=[ ];
-console.log(posts)
-
 const likedPostsId = [];
 const reportedPostsId = [];
 
@@ -24,7 +22,6 @@ const addToLiked = (id) => {
 const reportPost = (id) => {
     reportedPostsId.push(id);
     const remainingPosts = posts.filter((post) => !reportedPostsId.includes(post.id));
-    console.log(remainingPosts)
     showPosts(remainingPosts);
 };
 
