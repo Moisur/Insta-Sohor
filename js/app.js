@@ -23,6 +23,7 @@ const reportPost = (id) => {
     reportedPostsId.push(id);
     const remainingPosts = posts.filter((post) => !reportedPostsId.includes(post.id));
     showPosts(remainingPosts);
+    // document.getElementById("article").innerHTML=''
 };
 
 const displayContent = (text) => {
@@ -38,7 +39,6 @@ const switchTab = (id) => {
         document.getElementById( "liked" ).style.display = "block";
         document.getElementById( "posts" ).style.display = "none";
         document.getElementById( "reported" ).style.display = "none";
-
         displayLikedPosts();
     } else {
         document.getElementById( "reported" ).style.display = "block";
@@ -51,7 +51,7 @@ const switchTab = (id) => {
 const createPost = (post) => {
     const image = post.image;
     const userImage = post.userImage;
-    const div = document.createElement( "article" );
+    // const div = document.createElement( "article" );
     div.classList.add( "post" );
     div.innerHTML = `
               <div class="post__header">
@@ -132,8 +132,8 @@ const createPost = (post) => {
 };
 const showPosts = (posts) => {
     const productsContainer = document.getElementById( "posts" );
+    document.getElementById("article").innerHTML=''
     productsContainer.innerHTML = "";
-
     posts.forEach((post) => {
         const div = createPost(post);
         productsContainer.appendChild(div);
